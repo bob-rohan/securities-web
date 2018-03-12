@@ -1,0 +1,31 @@
+<table class="table table-striped">
+
+	<thead>
+		<tr class="row">
+			<th class="col-md-1">Code</th>
+			<th class="col-md-1">Price</th>
+			<th class="col-md-1">Market Cap.</th>
+			<th class="col-md-1">Equity</th>
+			<th class="col-md-1">Value to Private Owner</th>
+			<th class="col-md-1">Average Earnings Per Share - Basic</th>
+			<th class="col-md-1">AVG EPS to Price Factor</th>
+			<th class="col-md-2">EPS Positive Since Period</th>
+			<th class="col-md-1">Average Dividend</th>
+			<th class="col-md-1">Dividend to Price %</th>
+		</tr>
+	<thead>
+	<tbody>
+		<tr class="row" ng-repeat="security in securities">
+			<td class="col-md-1">{{ security.getCode() }}</td>
+			<td class="col-md-1">{{ security.getPrice() }}</td>
+			<td class="col-md-1">{{ security.getMarketCap() }}</td>
+			<td class="col-md-1">{{ security.getEquity() }}</td>
+			<td class="col-md-1" ng-class="security.getValueToPrivateOwner() < 66 ? 'info' : ''">{{ security.getValueToPrivateOwner()  }}</td>
+			<td class="col-md-1">{{ security.getAverageEarningsPerShareBasic()  }}</td>
+			<td class="col-md-1" ng-class="security.getAverageEarningsPerShareBasicFactor() < 14 ? 'info' : ''">{{ security.getAverageEarningsPerShareBasicFactor()  }}</td>
+			<td class="col-md-2" >{{ security.getEarningsPerSharePositiveSincePeriod() }}</td>
+			<td class="col-md-1">{{ security.getAverageDividend()  }}</td>
+			<td class="col-md-1" ng-class="security.getAverageDividendPercentOfPrice() > 2 ? 'info' : ''">{{ security.getAverageDividendPercentOfPrice()  }}</td>
+		</tr>
+	</tbody>
+</table>

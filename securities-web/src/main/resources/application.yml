@@ -1,0 +1,7 @@
+server.port: 8244
+
+spring.mvc.view:
+  prefix: html/
+  suffix: .html
+
+logging.level.root: INFO
